@@ -1,0 +1,47 @@
+{
+	"FondTxt": "temf",
+	"Dir": [
+	"./"
+	],
+	"Files": [
+	{
+	"Path": "go.mod",
+	"Type": 0,
+	"Val": 0,
+	"Line": 0,
+	"OpenTime": 516400,
+	"SousuoTime": 0
+	},
+	{
+	"Path": "main.go",
+	"Type": 2,
+	"Val": 2479,
+	"Line": 108,
+	"OpenTime": 546400,
+	"SousuoTime": 0
+	},
+	{
+	"Path": "skeeter.exe",
+	"Type": 0,
+	"Val": 0,
+	"Line": 0,
+	"OpenTime": 0,
+	"SousuoTime": 0
+	}
+	],
+	"Save": "result.json",
+	"Filter": [
+	"!.exe",
+	"!.rar",
+	"!.zip",
+	"!.iso",
+	"!.vmdk",
+	"!.vmem",
+	"!.dll",
+	"!.vmsn",
+	"!.pak",
+	"!.7z"
+	],
+	"Wa": {},
+	"StartTime": "2022-12-09T16:41:55.1057997+08:00"
+	}
