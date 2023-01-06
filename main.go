@@ -103,7 +103,6 @@ func (sk *Skeeter) Run()  {
 	for _, file := range sk.Files {
 		if file.Type == 0 { continue }
 		fmt.Printf(`目录："%v" 第[%v]行 位置："%v" 说明："%v" %v`,file.Path,file.Line,file.Val,m[file.Type],"\n")
-
 	}
 	temf := []_file{}
 	for _, file := range sk.Files {
@@ -148,9 +147,10 @@ func (sk *Skeeter) foundDir()  {
 
 func (sk *Skeeter) foundtText(path string,args string,i int)  {
 	//hello
-	defer sk.Wa.Done()
-
-	defer func() {<- sk.Scize}()
+	defer func() {
+		<- sk.Scize
+		sk.Wa.Done()
+	}()
 
 	for _, s2 := range sk.Filter {
 		//fmt.Println(s2[:1])
@@ -196,6 +196,11 @@ func (sk *Skeeter) foundtText(path string,args string,i int)  {
 			}
 		}
 		sk.Files[i].Line ++
+	}else {
+		if strings.Contains(path,args) {
+			sk.Files[i].Type = 3
+			sk.Files[i].Path = path
+		}
 	}
 
 	buf = nil
